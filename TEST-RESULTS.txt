@@ -1,0 +1,508 @@
+TAP version 13
+# Subtest: leave workday calculation clips a leave request to the selected date range
+ok 1 - leave workday calculation clips a leave request to the selected date range
+  ---
+  duration_ms: 19.546527
+  type: 'test'
+  ...
+# Subtest: leave workday calculation excludes configured weekly offs and company holidays
+ok 2 - leave workday calculation excludes configured weekly offs and company holidays
+  ---
+  duration_ms: 0.533136
+  type: 'test'
+  ...
+# Subtest: single-day half-day leave contributes one half day
+ok 3 - single-day half-day leave contributes one half day
+  ---
+  duration_ms: 1.315089
+  type: 'test'
+  ...
+# Subtest: half-day flag on a multi-day request does not halve the full range
+ok 4 - half-day flag on a multi-day request does not halve the full range
+  ---
+  duration_ms: 0.611114
+  type: 'test'
+  ...
+# Subtest: attendance credit weights full, late, three-quarter and half days consistently
+ok 5 - attendance credit weights full, late, three-quarter and half days consistently
+  ---
+  duration_ms: 0.588299
+  type: 'test'
+  ...
+# Subtest: absent and short days do not receive attendance credit
+ok 6 - absent and short days do not receive attendance credit
+  ---
+  duration_ms: 0.107021
+  type: 'test'
+  ...
+# Subtest: IST weekday calculation does not shift midnight dates to the previous UTC weekday
+ok 7 - IST weekday calculation does not shift midnight dates to the previous UTC weekday
+  ---
+  duration_ms: 12.402565
+  type: 'test'
+  ...
+# Subtest: every email has a subject, plain-text part and HTML body
+ok 8 - every email has a subject, plain-text part and HTML body
+  ---
+  duration_ms: 1.871349
+  type: 'test'
+  ...
+# Subtest: HTML-escaping is applied to user supplied content
+ok 9 - HTML-escaping is applied to user supplied content
+  ---
+  duration_ms: 0.177127
+  type: 'test'
+  ...
+# Subtest: reset email keeps the button styling and explains expiry, single use and the fallback link
+ok 10 - reset email keeps the button styling and explains expiry, single use and the fallback link
+  ---
+  duration_ms: 0.204669
+  type: 'test'
+  ...
+# Subtest: admin leave reminder is detailed: employee, dates, duration, reason, balance impact, action link
+ok 11 - admin leave reminder is detailed: employee, dates, duration, reason, balance impact, action link
+  ---
+  duration_ms: 0.175265
+  type: 'test'
+  ...
+# Subtest: admin digest summarises counts, percentage and what needs attention
+ok 12 - admin digest summarises counts, percentage and what needs attention
+  ---
+  duration_ms: 0.216468
+  type: 'test'
+  ...
+# Subtest: leave decision email states paid/LOP outcome and the reviewer note
+ok 13 - leave decision email states paid/LOP outcome and the reviewer note
+  ---
+  duration_ms: 0.835924
+  type: 'test'
+  ...
+# Subtest: employee analytics notes reject non-admin reads before database access
+ok 14 - employee analytics notes reject non-admin reads before database access
+  ---
+  duration_ms: 1.178422
+  type: 'test'
+  ...
+# Subtest: employee analytics notes validate employee IDs
+ok 15 - employee analytics notes validate employee IDs
+  ---
+  duration_ms: 0.25145
+  type: 'test'
+  ...
+# Subtest: employee analytics note creation rejects non-admin writes
+ok 16 - employee analytics note creation rejects non-admin writes
+  ---
+  duration_ms: 0.195456
+  type: 'test'
+  ...
+# Subtest: team average endpoint rejects invalid employee IDs
+ok 17 - team average endpoint rejects invalid employee IDs
+  ---
+  duration_ms: 0.302467
+  type: 'test'
+  ...
+# Subtest: employee analytics note schema rejects empty and oversized note bodies
+ok 18 - employee analytics note schema rejects empty and oversized note bodies
+  ---
+  duration_ms: 6.096849
+  type: 'test'
+  ...
+# Subtest: employee comparison rejects non-admin access before database queries
+ok 19 - employee comparison rejects non-admin access before database queries
+  ---
+  duration_ms: 1.404214
+  type: 'test'
+  ...
+# Subtest: employee comparison validates custom date range before database queries
+ok 20 - employee comparison validates custom date range before database queries
+  ---
+  duration_ms: 0.547568
+  type: 'test'
+  ...
+# Subtest: individual analytics rejects non-admin access before employee lookup
+ok 21 - individual analytics rejects non-admin access before employee lookup
+  ---
+  duration_ms: 0.593208
+  type: 'test'
+  ...
+# Subtest: comparison endpoint rejects non-admin access
+ok 22 - comparison endpoint rejects non-admin access
+  ---
+  duration_ms: 0.27777
+  type: 'test'
+  ...
+# Subtest: individual analytics endpoint rejects non-admin access before querying employee data
+ok 23 - individual analytics endpoint rejects non-admin access before querying employee data
+  ---
+  duration_ms: 0.354737
+  type: 'test'
+  ...
+# Subtest: employee comparison rejects impossible calendar dates before database access
+ok 24 - employee comparison rejects impossible calendar dates before database access
+  ---
+  duration_ms: 0.488008
+  type: 'test'
+  ...
+# Subtest: employee comparison rejects unsupported employment types before database access
+ok 25 - employee comparison rejects unsupported employment types before database access
+  ---
+  duration_ms: 0.283729
+  type: 'test'
+  ...
+# Subtest: employee model accepts supported employment classifications and rejects unknown values
+ok 26 - employee model accepts supported employment classifications and rejects unknown values
+  ---
+  duration_ms: 2.192555
+  type: 'test'
+  ...
+# Subtest: employees who joined in a previous year get the full 20 days
+ok 27 - employees who joined in a previous year get the full 20 days
+  ---
+  duration_ms: 13.688427
+  type: 'test'
+  ...
+# Subtest: mid-year joiners are prorated by months remaining (joining month counts)
+ok 28 - mid-year joiners are prorated by months remaining (joining month counts)
+  ---
+  duration_ms: 0.495208
+  type: 'test'
+  ...
+# Subtest: employees joining in a future year get nothing for this year
+ok 29 - employees joining in a future year get nothing for this year
+  ---
+  duration_ms: 0.276177
+  type: 'test'
+  ...
+# Subtest: carry-forward moves unused annual leave, capped at the policy maximum
+ok 30 - carry-forward moves unused annual leave, capped at the policy maximum
+  ---
+  duration_ms: 0.643854
+  type: 'test'
+  ...
+# Subtest: carried days are added on top of the new year's allocation
+ok 31 - carried days are added on top of the new year's allocation
+  ---
+  duration_ms: 0.2783
+  type: 'test'
+  ...
+# Subtest: October joiners receive the prorated 6-day allocation under the existing 20-day policy
+ok 32 - October joiners receive the prorated 6-day allocation under the existing 20-day policy
+  ---
+  duration_ms: 0.276498
+  type: 'test'
+  ...
+# Subtest: a November joiner receives two months of allocation, with half-day rounding
+ok 33 - a November joiner receives two months of allocation, with half-day rounding
+  ---
+  duration_ms: 0.320044
+  type: 'test'
+  ...
+# Subtest: leave allocations total exactly twenty days
+ok 34 - leave allocations total exactly twenty days
+  ---
+  duration_ms: 0.593398
+  type: 'test'
+  ...
+# Subtest: payroll calculates expected 3.5 LOP days on a 30-day gross of 30000
+ok 35 - payroll calculates expected 3.5 LOP days on a 30-day gross of 30000
+  ---
+  duration_ms: 0.7272
+  type: 'test'
+  ...
+# Subtest: payroll never returns negative net pay
+ok 36 - payroll never returns negative net pay
+  ---
+  duration_ms: 0.204519
+  type: 'test'
+  ...
+# Subtest: attendance checkout calculates work hours and review flags
+ok 37 - attendance checkout calculates work hours and review flags
+  ---
+  duration_ms: 0.197789
+  type: 'test'
+  ...
+# Subtest: attendance rejects invalid timestamps
+ok 38 - attendance rejects invalid timestamps
+  ---
+  duration_ms: 0.200804
+  type: 'test'
+  ...
+# Subtest: payroll applies provident-fund deduction only when explicitly configured
+ok 39 - payroll applies provident-fund deduction only when explicitly configured
+  ---
+  duration_ms: 0.208866
+  type: 'test'
+  ...
+# Subtest: integration: full month, salary structure → no deductions
+ok 40 - integration: full month, salary structure → no deductions
+  ---
+  duration_ms: 15.142116
+  type: 'test'
+  ...
+# Subtest: integration: one absence + an approved company holiday + optional holiday excluded upstream
+ok 41 - integration: one absence + an approved company holiday + optional holiday excluded upstream
+  ---
+  duration_ms: 0.805198
+  type: 'test'
+  ...
+# Subtest: integration: back-dated month still finds the superseded salary structure
+ok 42 - integration: back-dated month still finds the superseded salary structure
+  ---
+  duration_ms: 1.477113
+  type: 'test'
+  ...
+# Subtest: integration: no structure falls back to employee record, with a warning
+ok 43 - integration: no structure falls back to employee record, with a warning
+  ---
+  duration_ms: 0.736784
+  type: 'test'
+  ...
+# Subtest: integration: leave record apportioned, Sat-working policy respected
+ok 44 - integration: leave record apportioned, Sat-working policy respected
+  ---
+  duration_ms: 1.528842
+  type: 'test'
+  ...
+# Subtest: integration: guards - future month, early generation, manual mode, bad inputs
+ok 45 - integration: guards - future month, early generation, manual mode, bad inputs
+  ---
+  duration_ms: 2.112775
+  type: 'test'
+  ...
+# Subtest: integration: toPayslipFields keeps legacy fields consistent
+ok 46 - integration: toPayslipFields keeps legacy fields consistent
+  ---
+  duration_ms: 0.876465
+  type: 'test'
+  ...
+# Subtest: calendar helpers
+ok 47 - calendar helpers
+  ---
+  duration_ms: 1.140905
+  type: 'test'
+  ...
+# Subtest: perfect attendance: 21 working days, no LOP, nothing deducted
+ok 48 - perfect attendance: 21 working days, no LOP, nothing deducted
+  ---
+  duration_ms: 1.274808
+  type: 'test'
+  ...
+# Subtest: absent day costs gross/30 on a CALENDAR basis, half day costs half
+ok 49 - absent day costs gross/30 on a CALENDAR basis, half day costs half
+  ---
+  duration_ms: 0.369408
+  type: 'test'
+  ...
+# Subtest: WORKING-day basis divides by 21 working days
+ok 50 - WORKING-day basis divides by 21 working days
+  ---
+  duration_ms: 0.844417
+  type: 'test'
+  ...
+# Subtest: employee who joined mid-month is NOT paid for days before joining (bug fix)
+ok 51 - employee who joined mid-month is NOT paid for days before joining (bug fix)
+  ---
+  duration_ms: 0.405884
+  type: 'test'
+  ...
+# Subtest: holidays and weekly offs are never LOP; optional holiday handling is by caller
+ok 52 - holidays and weekly offs are never LOP; optional holiday handling is by caller
+  ---
+  duration_ms: 0.180893
+  type: 'test'
+  ...
+# Subtest: approved paid leave counts as paid; leave beyond balance is LOP
+ok 53 - approved paid leave counts as paid; leave beyond balance is LOP
+  ---
+  duration_ms: 0.303499
+  type: 'test'
+  ...
+# Subtest: half-day leave + half-day attendance gives no LOP; half-day leave without attendance gives 0.5 LOP
+ok 54 - half-day leave + half-day attendance gives no LOP; half-day leave without attendance gives 0.5 LOP
+  ---
+  duration_ms: 0.295657
+  type: 'test'
+  ...
+# Subtest: leave spanning two months is apportioned by day (October part does not leak into November)
+ok 55 - leave spanning two months is apportioned by day (October part does not leak into November)
+  ---
+  duration_ms: 0.402879
+  type: 'test'
+  ...
+# Subtest: late marks are counted and optionally converted to half-day deductions
+ok 56 - late marks are counted and optionally converted to half-day deductions
+  ---
+  duration_ms: 0.586727
+  type: 'test'
+  ...
+# Subtest: overtime: derived rate uses multiplier; an explicit admin rate is NOT multiplied again (bug fix)
+ok 57 - overtime: derived rate uses multiplier; an explicit admin rate is NOT multiplied again (bug fix)
+  ---
+  duration_ms: 0.53552
+  type: 'test'
+  ...
+# Subtest: open (no check-out) sessions are not treated as absent and are flagged
+ok 58 - open (no check-out) sessions are not treated as absent and are flagged
+  ---
+  duration_ms: 0.446576
+  type: 'test'
+  ...
+# Subtest: month in progress: days after asOf are pending, not LOP (bug fix)
+ok 59 - month in progress: days after asOf are pending, not LOP (bug fix)
+  ---
+  duration_ms: 0.223227
+  type: 'test'
+  ...
+# Subtest: PF respects the wage ceiling and is computed on EARNED basic; ESI eligibility uses standard gross
+ok 60 - PF respects the wage ceiling and is computed on EARNED basic; ESI eligibility uses standard gross
+  ---
+  duration_ms: 0.700219
+  type: 'test'
+  ...
+# Subtest: professional tax: slab lookup and explicit override
+ok 61 - professional tax: slab lookup and explicit override
+  ---
+  duration_ms: 0.3044
+  type: 'test'
+  ...
+# Subtest: bonus, other earnings, TDS, recurring + one-off deductions all flow into net pay
+ok 62 - bonus, other earnings, TDS, recurring + one-off deductions all flow into net pay
+  ---
+  duration_ms: 0.236408
+  type: 'test'
+  ...
+# Subtest: line items always sum to totals (no floating point drift)
+ok 63 - line items always sum to totals (no floating point drift)
+  ---
+  duration_ms: 0.307314
+  type: 'test'
+  ...
+# Subtest: net pay never goes negative; shortfall is reported
+ok 64 - net pay never goes negative; shortfall is reported
+  ---
+  duration_ms: 0.21828
+  type: 'test'
+  ...
+# Subtest: manual payslip is exactly basic + allowances - deductions, with no automatic statutory deductions
+ok 65 - manual payslip is exactly basic + allowances - deductions, with no automatic statutory deductions
+  ---
+  duration_ms: 0.182837
+  type: 'test'
+  ...
+# Subtest: salary resolution: single structure, mid-month revision, legacy fallback, none
+ok 66 - salary resolution: single structure, mid-month revision, legacy fallback, none
+  ---
+  duration_ms: 6.837709
+  type: 'test'
+  ...
+# Subtest: settings: defaults merge, validation catches bad input
+ok 67 - settings: defaults merge, validation catches bad input
+  ---
+  duration_ms: 1.194956
+  type: 'test'
+  ...
+# Subtest: settings: an explicitly empty list is respected, not replaced by defaults
+ok 68 - settings: an explicitly empty list is respected, not replaced by defaults
+  ---
+  duration_ms: 0.206983
+  type: 'test'
+  ...
+# Subtest: pickCurrent ignores future-dated structures and picks the latest started one
+ok 69 - pickCurrent ignores future-dated structures and picks the latest started one
+  ---
+  duration_ms: 0.788933
+  type: 'test'
+  ...
+# Subtest: creating an employee with a salary produces a first structure
+ok 70 - creating an employee with a salary produces a first structure
+  ---
+  duration_ms: 1.313276
+  type: 'test'
+  ...
+# Subtest: a zero salary on creation stores nothing
+ok 71 - a zero salary on creation stores nothing
+  ---
+  duration_ms: 0.118219
+  type: 'test'
+  ...
+# Subtest: saving the form without changing pay does not create a revision
+ok 72 - saving the form without changing pay does not create a revision
+  ---
+  duration_ms: 0.168735
+  type: 'test'
+  ...
+# Subtest: a raise creates a new structure and keeps the HRA split when it still fits
+ok 73 - a raise creates a new structure and keeps the HRA split when it still fits
+  ---
+  duration_ms: 0.155435
+  type: 'test'
+  ...
+# Subtest: when allowances drop below the old HRA the split resets
+ok 74 - when allowances drop below the old HRA the split resets
+  ---
+  duration_ms: 0.17899
+  type: 'test'
+  ...
+# Subtest: a correction on the same effective day updates in place instead of adding a duplicate
+ok 75 - a correction on the same effective day updates in place instead of adding a duplicate
+  ---
+  duration_ms: 0.127533
+  type: 'test'
+  ...
+# Subtest: legacy employee (no structure) with pay gets a structure on first save
+ok 76 - legacy employee (no structure) with pay gets a structure on first save
+  ---
+  duration_ms: 0.094593
+  type: 'test'
+  ...
+# Subtest: rate limiter allows up to max requests per key, then answers 429 with Retry-After
+ok 77 - rate limiter allows up to max requests per key, then answers 429 with Retry-After
+  ---
+  duration_ms: 0.741832
+  type: 'test'
+  ...
+# Subtest: reset tokens are random, only their hash is stored, and they expire
+ok 78 - reset tokens are random, only their hash is stored, and they expire
+  ---
+  duration_ms: 0.879209
+  type: 'test'
+  ...
+# Subtest: reset link carries the token and url-encoded email
+ok 79 - reset link carries the token and url-encoded email
+  ---
+  duration_ms: 0.204739
+  type: 'test'
+  ...
+# Subtest: phone: accepts normal numbers and common separators
+ok 80 - phone: accepts normal numbers and common separators
+  ---
+  duration_ms: 0.724606
+  type: 'test'
+  ...
+# Subtest: phone: rejects the excessively long number from the bug report, letters and too-short values
+ok 81 - phone: rejects the excessively long number from the bug report, letters and too-short values
+  ---
+  duration_ms: 0.847902
+  type: 'test'
+  ...
+# Subtest: money: accepts realistic values and rounds to 2 decimals
+ok 82 - money: accepts realistic values and rounds to 2 decimals
+  ---
+  duration_ms: 0.766509
+  type: 'test'
+  ...
+# Subtest: money: rejects the unrealistic salary from the bug report and other bad input
+ok 83 - money: rejects the unrealistic salary from the bug report and other bad input
+  ---
+  duration_ms: 12.621243
+  type: 'test'
+  ...
+1..83
+# tests 83
+# suites 0
+# pass 83
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 1101.892054
